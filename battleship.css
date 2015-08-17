@@ -1,0 +1,24 @@
+.cell {
+    width: 30px;
+    height: 30px;
+    float: left;
+    padding: 2px;
+    margin: 1px;
+    border: 1px solid black;
+}
+
+.lastCell {
+    width: 30px;
+    height: 30px;
+    float: left;
+    padding: 2px;
+    margin: 1px;
+}
+
+.greenShip {
+    background: green;
+}
+
+.redShip {
+    background: red;
+}

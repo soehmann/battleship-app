@@ -1,0 +1,8 @@
+{
+  "ships" : [
+    { "id": 2, "name": "Schnellboot", "size": 2, "count": 5 },
+    { "id": 3, "name": "Aufklärer", "size": 3, "count": 4 },
+    { "id": 4, "name": "Fregatte", "size": 4, "count": 3 },
+    { "id": 5, "name": "Zerstörer", "size": 5, "count": 2 }
+  ]
+}

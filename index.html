@@ -1,0 +1,42 @@
+<html ng-app="battleshipApp">
+<head>
+  <meta charset="utf8" />
+  <title>Groovy Academy - Battleship-App</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="battleship.css">
+</head>
+<body>
+  <div class="container">
+
+    <form ng-controller="BoatsCtrl">
+      <input type="text" ng-model="coordinates"><a href class="btn btn-default btn-sm" ng-click="player.fire(coordinates);">Feuer</a>
+    </form>
+
+    <table class="table" ng-controller="BoatsCtrl">
+      <tr ng-repeat="boat in player.getShips()" ng-class="{'redShip':$last}">
+        <td>Schiff {{boat.name}}:</td>
+        <td>Größe {{boat.size}}</td>
+        <td>Anzahl {{boat.count}}</td>
+      </tr>
+    </table>
+
+    <div>
+    <table ng-controller="BoatsCtrl">
+      <tr ng-repeat="row in player.getRows()">
+        <!--<td ng-repeat="cell in player.getRow(row)">{{cell.state}}</td>-->
+        <td ng-repeat="cell in player.getRow(row)">{{cell.state}}</td>
+      </tr>
+    </table>
+    <div ng-controller="BoatsCtrl">
+      <div ng-repeat="row in player.getRows()" style="margin:5px;">
+        <!--<td ng-repeat="cell in player.getRow(row)">{{cell.state}}</td>-->
+        <div class="cell" ng-class="{'lastCell':$last,'cell':!$last}" ng-repeat="cell in player.getRow(row)" title="{{cell.pos}}">{{cell.state}}</div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+  <script type="text/javascript" src="angular-1.4.4.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
